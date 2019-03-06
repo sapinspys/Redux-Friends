@@ -11,7 +11,13 @@ export const fetchData = () => dispatch => {
     .then(res => {
       dispatch({
         type: SUCCESS,
-        payload: res.data
+        payload: res.data,
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: FAILURE,
+        payload: err.response,
       })
     })
 }
