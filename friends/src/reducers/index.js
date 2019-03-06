@@ -1,3 +1,5 @@
+import { combineReducers } from 'redux';
+
 import { FETCH_FRIENDS, SUCCESS, FAILURE } from "../actions";
 
 const initialState = {
@@ -6,7 +8,7 @@ const initialState = {
   error: null,
 }
 
-export const fetchingReducer = (state = initialState, action) => {
+const fetchingReducer = (state = initialState, action) => {
   switch(action.typpes) {
     case FETCH_FRIENDS:
       return {
@@ -29,3 +31,7 @@ export const fetchingReducer = (state = initialState, action) => {
       return state;
   }
 }
+
+export default combineReducers({
+  fetchingReducer,
+})
