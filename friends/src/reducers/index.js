@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { friendReducer } from './friendReducer';
+import { fetchingReducer } from './friendReducer';
 
 export default combineReducers({
   fetchingReducer,

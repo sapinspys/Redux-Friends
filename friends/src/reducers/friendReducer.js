@@ -7,7 +7,7 @@ const initialState = {
 }
 
 export const fetchingReducer = (state = initialState, action) => {
-  switch(action.typpes) {
+  switch(action.type) {
     case FETCH_FRIENDS:
       return {
         ...state,
