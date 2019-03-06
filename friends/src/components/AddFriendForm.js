@@ -1,0 +1,77 @@
+import React, { Component } from 'react';
+
+import { Button, Form, Label, Input } from 'reactstrap';
+
+// Inline Styles
+const formStyles = {
+  width: '400px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  margin: '0 auto',
+  height: '400px',
+  background: 'whitesmoke',
+  padding: '20px',
+  borderRadius: '5px',
+  boxShadow: '0 0 2px black',
+  marginTop: '50px'
+}
+
+export default class FriendForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            age: '',
+            email: '',
+        };
+    }
+  
+    handleChange = e => {
+      this.setState({[e.target.name]: e.target.value});
+    }
+
+    handleSubmit = (e) => {
+      e.preventDefault();
+      // this.props.addFriend(this.state);
+
+      this.setState({
+        name: '',
+        age: '',
+        email: ''
+      })
+    }
+  
+    render() {
+      return (
+        <Form onSubmit={this.handleSubmit} style={formStyles}>
+          <Label style={{color:'gray', fontSize: '1.4rem'}}>Add a Friend</Label>
+          <Label>
+            Name:
+            <Input type="text" 
+              value={this.state.name} 
+              onChange={this.handleChange} 
+              name='name' />
+          </Label>
+          <Label>
+            Age:
+            <Input type="text" 
+              value={this.state.age} 
+              onChange={this.handleChange} 
+              name='age' />
+          </Label>
+          <Label>
+            Email:
+            <Input type="text" 
+              value={this.state.email} 
+              onChange={this.handleChange} 
+              name='email' />
+          </Label>
+          {/* <Link>
+            <Button color='primary' block>Submit</Button>
+          </Link> */}
+          <Button color='primary' block>Submit</Button>
+        </Form>
+      );
+    }
+  }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// import AddFriendFrom from './components/AddFriendForm';
+import AddFriendFrom from './components/AddFriendForm';
 import Friends from './components/Friends';
 
 import { connect } from 'react-redux';
@@ -17,9 +17,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>testing, {this.props.fetchingFriends}</h1>
-        <Friends friends={this.props.friends} />
-        {/* <AddFriendFrom /> */}
+        <h1>My Friends!</h1>
+        <div className='flexContainer'>
+          <AddFriendFrom />
+          <Friends friends={this.props.friends} />
+        </div>
       </div>
     );
   }
