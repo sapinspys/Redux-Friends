@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Friend from './Friend';
+
 const Friends = props => {
   return (
-    <div>
+    <div className='friendsContainer'>
       {props.friends.map(friend => {
-        return <div key={friend.id}>{friend.name}</div>
+        return <Friend key={friend.id} friend={friend} />
       })}
     </div>
   )
