@@ -6,7 +6,14 @@ import Friends from './Friends';
 import { connect } from 'react-redux';
 import { fetchData, deleteFriend } from '../actions';
 
+import { Spinner } from 'reactstrap';
+
 // INLINE STYLES
+const loading = {
+  textAlign: 'center',
+  marginTop: '250px',
+}
+
 const app = {
   textAlign: 'center',
   marginTop: '25px',
@@ -33,6 +40,14 @@ class FriendsPage extends Component {
   }
 
   render() {
+    if (this.props.fetchingFriends) {
+      return (
+        <header style={loading}>
+          <Spinner color="light" />
+        </header>
+      )
+    }
+
     return (
       <div style={app}>
         <header style={header}>
