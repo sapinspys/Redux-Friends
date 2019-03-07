@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addFriend } from '../actions';
 
-import { Button, Form, Label, Input } from 'reactstrap';
+// import { Button, Form, Label, Input } from 'reactstrap';
 
 // INLINE STYLING
 const formStyles = {
@@ -39,38 +39,38 @@ class AddFriendForm extends Component {
       this.setState({
         name: '',
         age: '',
-        email: ''
+        email: '',
       })
     }
   
     render() {
       return (
-        <Form onSubmit={this.handleSubmit} 
-          style={formStyles}>
-          <Label style={{color:'gray', fontSize: '1.4rem'}}>Add a Friend</Label>
-          <Label>
-            Name:
-            <Input type="text" 
-              value={this.state.name} 
-              onChange={this.handleChange} 
-              name='name' />
-          </Label>
-          <Label>
-            Age:
-            <Input type="text" 
-              value={this.state.age} 
-              onChange={this.handleChange} 
-              name='age' />
-          </Label>
-          <Label>
-            Email:
-            <Input type="text" 
-              value={this.state.email} 
-              onChange={this.handleChange} 
-              name='email' />
-          </Label>
-          <Button color='primary' block>Submit</Button>
-        </Form>
+        <h1>hello</h1>
+        // <Form onSubmit={this.handleSubmit} style={formStyles}>
+        //   <Label style={{color:'gray', fontSize: '1.4rem'}}>Add a Friend</Label>
+        //   <Label>
+        //     Name:
+        //     <Input type="text" 
+        //       value={this.state.name} 
+        //       onChange={this.handleChange} 
+        //       name='name' />
+        //   </Label>
+        //   <Label>
+        //     Age:
+        //     <Input type="text" 
+        //       value={this.state.age} 
+        //       onChange={this.handleChange} 
+        //       name='age' />
+        //   </Label>
+        //   <Label>
+        //     Email:
+        //     <Input type="text" 
+        //       value={this.state.email} 
+        //       onChange={this.handleChange} 
+        //       name='email' />
+        //   </Label>
+        //   <Button color='primary' block>Submit</Button>
+        // </Form>
       );
     }
   }

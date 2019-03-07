@@ -15,7 +15,7 @@ export const login = credentials => dispatch => {
   return axios
     .post('http://localhost:5000/api/login', credentials)
     .then(res => {
-      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('token', res.data.payload);
       dispatch({ 
         type: LOGIN_SUCCESS, 
         payload: res.data,
@@ -32,7 +32,10 @@ export const login = credentials => dispatch => {
 export const fetchData = () => dispatch => {
   dispatch ({ type: FETCH_FRIENDS })
   axios
-    .get('http://localhost:5000/api/friends')
+    .get(
+      'http://localhost:5000/api/friends',
+      { headers: { "authorization": localStorage.getItem('token') } }
+    )
     .then(res => {
       dispatch({
         type: SUCCESS,
