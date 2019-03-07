@@ -4,7 +4,7 @@ import AddFriendFrom from './components/AddFriendForm';
 import Friends from './components/Friends';
 
 import { connect } from 'react-redux';
-import { fetchData } from './actions';
+import { fetchData, deleteFriend } from './actions';
 
 // INLINE STYLES
 const app = {
@@ -30,6 +30,11 @@ class App extends Component {
     this.props.fetchData();
   }
 
+  deleteFriend = (id) => {
+    alert(id);
+    this.props.deleteFriend();
+  }
+
   render() {
     return (
       <div style={app}>
@@ -41,7 +46,7 @@ class App extends Component {
           <AddFriendFrom />
           <Friends 
             friends={this.props.friends}
-            deleteFriend={this.deleteFriend} />
+            deleteFriend={(id) => this.deleteFriend(id)} />
         </div>
       </div>
     );
@@ -57,5 +62,5 @@ const mapStateToProps = (state) => {
 }
 
 // the characters and the fetching boolean
-export default connect(mapStateToProps, { fetchData })(App);
+export default connect(mapStateToProps, { fetchData, deleteFriend })(App);
 

@@ -16,7 +16,7 @@ const Friends = props => {
         return <Friend 
           key={friend.id} 
           friend={friend}
-          deleteFriend={props.deleteFriend} />
+          deleteFriend={() => props.deleteFriend(friend.id)} />
       })}
     </div>
   )

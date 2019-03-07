@@ -26,7 +26,7 @@ const Friend = props => {
       <p><strong>Age</strong>:<br />{props.friend.age}</p>
       <p><strong>Email</strong>:<br />{props.friend.email}</p>
       <Button color='danger'
-        onClick={props.deleteFriend}>
+        onClick={() => props.deleteFriend()}>
           Delete
       </Button>
     </Card>
