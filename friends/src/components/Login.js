@@ -6,8 +6,7 @@ class Login extends Component {
     return (
       <div>
         <header>
-          <h1>My Friends!</h1>
-          <p>Login Page Coming Soon!</p>
+          <h1>Login Page Coming Soon!</h1>
         </header>
       </div>
     );
