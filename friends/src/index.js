@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
+import Root from './components/Root';
 import rootReducer from './reducers';
-
-import { BrowserRouter as Router } from 'react-router-dom';
 
 const store = createStore(
   rootReducer,
@@ -20,11 +17,7 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>, 
+  <Root store={store} />, 
   document.getElementById('root')
 );
 
