@@ -34,7 +34,7 @@ export const fetchData = () => dispatch => {
   axios
     .get(
       'http://localhost:5000/api/friends',
-      { headers: { "authorization": localStorage.getItem('token') } }
+      {headers: {"authorization": localStorage.getItem('token')}},
     )
     .then(res => {
       dispatch({
@@ -53,7 +53,11 @@ export const fetchData = () => dispatch => {
 export const addFriend = (friendData) => dispatch => {
   dispatch ({ type: ADDING_FRIEND })
   axios
-    .post('http://localhost:5000/api/friends', friendData)
+    .post(
+      'http://localhost:5000/api/friends', 
+      friendData,
+      {headers: {"authorization": localStorage.getItem('token')}},
+    )
     .then(res => {
       dispatch({
         type: SUCCESS,
@@ -71,7 +75,10 @@ export const addFriend = (friendData) => dispatch => {
 export const deleteFriend = (id) => dispatch => {
   dispatch ({ type: DELETING_FRIEND })
   axios
-    .delete(`http://localhost:5000/api/friends/${id}`)
+    .delete(
+      `http://localhost:5000/api/friends/${id}`,
+      {headers: {"authorization": localStorage.getItem('token')}},
+    )
     .then(res => {
       dispatch({
         type: SUCCESS,
@@ -89,7 +96,11 @@ export const deleteFriend = (id) => dispatch => {
 export const editFriend = (id, friendData) => dispatch => {
   dispatch ({ type: EDITING_FRIEND })
   axios
-    .put(`http://localhost:5000/api/friends/${id}`, friendData)
+    .put(
+      `http://localhost:5000/api/friends/${id}`, 
+      friendData,
+      {headers: {"authorization": localStorage.getItem('token')}},
+      )
     .then(res => {
       dispatch({
         type: SUCCESS,
