@@ -4,8 +4,9 @@ import Friend from './Friend';
 
 // INLINE STYLING
 const cardContainer = {
-  width: '240px',
+  width: '500px',
   display: 'flex',
+  justifyContent: 'space-between',
   flexWrap: 'wrap',
 }
 

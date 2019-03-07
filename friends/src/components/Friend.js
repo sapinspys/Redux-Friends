@@ -19,12 +19,13 @@ const card = {
   background: 'whitesmoke',
   border: 'none',
   boxShadow: '0 0 10px white',
+  maxHeight: '240px',
 }
 
 const cardTitle = {
   paddingBottom: '5px', 
   borderBottom: '1px solid silver', 
-  background: 'navy',
+  background: 'steelblue',
   padding: '10px 0',
   color: 'whitesmoke',
 }
@@ -38,7 +39,7 @@ const formStyles = {
   background: 'whitesmoke',
   padding: '20px',
   borderRadius: '5px',
-  boxShadow: '0 0 10px white',
+  boxShadow: '0 0 19px black',
 }
 
 const buttonContainer = {
@@ -49,6 +50,11 @@ const buttonContainer = {
 const button = {
   width: '100px',
   marginBottom: '10px',
+}
+
+const dropdownMenu = {
+  background: 'rgba(200,200,200,0)',
+  border: 'none',
 }
 
 class Friend extends React.Component {
@@ -108,7 +114,7 @@ class Friend extends React.Component {
               caret >
               Edit
             </DropdownToggle>
-            <DropdownMenu>
+            <DropdownMenu style={dropdownMenu}>
               <Form onSubmit={this.handleSubmit(this.props.friend.id)} 
                 style={formStyles} >
                 <Label>

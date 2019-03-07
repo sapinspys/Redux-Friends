@@ -19,8 +19,8 @@ const header = {
 const flexContainer = {
   paddingTop: '25px',
   display: 'flex',
-  justifyContent: 'space-between',
-  maxWidth: '580px',
+  justifyContent: 'space-evenly',
+  maxWidth: '1000px',
   margin: '0 auto',
 }
 
@@ -39,7 +39,7 @@ class FriendsPage extends Component {
       <div style={app}>
         <header style={header}>
           <h1>My Friends!</h1>
-          <p>Add new friends or edit by clicking on a friend card.</p>
+          <p>Powered by React.js and Redux.js.</p>
         </header>
         <div style={flexContainer}>
           <AddFriendForm />
