@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+export const LOGIN_START = 'LOGIN_START';
 export const FETCH_FRIENDS = 'FETCH_FRIENDS';
 export const SUCCESS = 'SUCCESS';
 export const FAILURE = 'FAILURE';
@@ -7,6 +8,18 @@ export const ADDING_FRIEND = 'ADDING_FRIEND';
 export const DELETING_FRIEND = 'DELETING_FRIEND';
 export const EDITING_FRIEND = 'EDITING_FRIEND';
 
+export const login = credentials => dispatch => {
+  dispatch({ type: LOGIN_START });
+  return axios
+    .post('http://localhost:5000/api/login', credentials)
+    .then(res => {
+      localStorage.setItem('token', res.data.token);
+      dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: LOGIN_FAILURE, payload: err.response.message });
+    });
+};
 
 export const fetchData = () => dispatch => {
   dispatch ({ type: FETCH_FRIENDS })

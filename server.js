@@ -56,8 +56,8 @@ function authenticator(req, res, next) {
   if (authorization === token) {
     next();
   } else {
-    // res.status(403).json({ error: 'User must be logged in to do that.' });
-    next();
+    res.status(403).json({ error: 'User must be logged in to do that.' });
+    // next();
   }
 }
 
@@ -69,13 +69,13 @@ app.post('/api/login', (req, res) => {
       payload: token
     });
   } else {
-    // res
-    //   .status(403)
-    //   .json({ error: 'Username or Password incorrect. Please see Readme' });
-    req.loggedIn = true;
-    res.status(200).json({
-      payload: token
-    });
+    res
+      .status(403)
+      .json({ error: 'Username or Password incorrect. Please see Readme' });
+    // req.loggedIn = true;
+    // res.status(200).json({
+    //   payload: token
+    // });
   }
 });
 
