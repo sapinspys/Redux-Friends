@@ -24,9 +24,20 @@ export const fetchData = () => dispatch => {
     })
 }
 
-export const addFriend = () => dispatch => {
+export const addFriend = (friendData) => dispatch => {
   dispatch ({ type: ADDING_FRIEND })
   axios
-    .post 
-
+    .get('http://localhost:5000/api/friends', friendData)
+    .then(res => {
+      dispatch({
+        type: SUCCESS,
+        payload: res.data,
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: FAILURE,
+        payload: err.response,
+      })
+    })
 }
