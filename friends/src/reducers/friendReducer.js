@@ -1,18 +1,25 @@
-import { FETCH_FRIENDS, SUCCESS, FAILURE } from "../actions";
+import { FETCH_FRIENDS, ADDING_FRIEND, SUCCESS, FAILURE } from "../actions";
 
 const initialState = {
   fetchingFriends: false,
+  addingFriend: false,
   friends: [],
   error: null,
 }
 
-export const fetchingReducer = (state = initialState, action) => {
+export const friendReducer = (state = initialState, action) => {
   switch(action.type) {
     case FETCH_FRIENDS:
       return {
         ...state,
         fetchingFriends: true,
         error: null,
+      }
+    case ADDING_FRIEND:
+      return {
+        ...state,
+        addingFriend: true,
+        error:null,
       }
     case SUCCESS:
       return {
