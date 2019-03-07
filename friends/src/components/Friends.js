@@ -8,6 +8,7 @@ const cardContainer = {
   display: 'flex',
   justifyContent: 'space-between',
   flexWrap: 'wrap',
+  marginLeft: '350px',
 }
 
 const Friends = props => {

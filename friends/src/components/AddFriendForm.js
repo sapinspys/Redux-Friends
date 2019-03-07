@@ -16,6 +16,7 @@ const formStyles = {
   padding: '20px',
   borderRadius: '5px',
   boxShadow: '0 0 10px white',
+  position: 'fixed',
 }
 
 class AddFriendForm extends Component {

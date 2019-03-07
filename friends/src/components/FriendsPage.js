@@ -18,9 +18,7 @@ const header = {
 
 const flexContainer = {
   paddingTop: '25px',
-  display: 'flex',
-  justifyContent: 'space-evenly',
-  maxWidth: '1000px',
+  maxWidth: '900px',
   margin: '0 auto',
 }
 
