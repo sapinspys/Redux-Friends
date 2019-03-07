@@ -5,7 +5,7 @@ import { addFriend } from '../actions';
 
 import { Button, Form, Label, Input } from 'reactstrap';
 
-// Inline Styles
+// INLINE STYLING
 const formStyles = {
   width: '300px',
   display: 'flex',
