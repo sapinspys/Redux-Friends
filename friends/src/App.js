@@ -31,8 +31,7 @@ class App extends Component {
   }
 
   deleteFriend = (id) => {
-    alert(id);
-    this.props.deleteFriend();
+    this.props.deleteFriend(id);
   }
 
   render() {
