@@ -1,4 +1,12 @@
-import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE, FETCH_FRIENDS, ADDING_FRIEND, DELETING_FRIEND, EDITING_FRIEND, SUCCESS, FAILURE } from "../actions";
+import { LOGIN_START, 
+  LOGIN_SUCCESS, 
+  LOGIN_FAILURE, 
+  FETCH_FRIENDS, 
+  ADDING_FRIEND, 
+  DELETING_FRIEND, 
+  EDITING_FRIEND, 
+  SUCCESS, 
+  FAILURE } from "../actions";
 
 const initialState = {
   fetchingFriends: false,
