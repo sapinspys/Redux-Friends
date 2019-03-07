@@ -15,7 +15,7 @@ const formStyles = {
   background: 'whitesmoke',
   padding: '20px',
   borderRadius: '5px',
-  boxShadow: '0 0 5px black',
+  boxShadow: '0 0 10px white',
 }
 
 class AddFriendForm extends Component {
@@ -45,7 +45,8 @@ class AddFriendForm extends Component {
   
     render() {
       return (
-        <Form onSubmit={this.handleSubmit} style={formStyles}>
+        <Form onSubmit={this.handleSubmit} 
+          style={formStyles}>
           <Label style={{color:'gray', fontSize: '1.4rem'}}>Add a Friend</Label>
           <Label>
             Name:

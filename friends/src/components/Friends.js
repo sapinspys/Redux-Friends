@@ -13,7 +13,10 @@ const Friends = props => {
   return (
     <div style={cardContainer}>
       {props.friends.map(friend => {
-        return <Friend key={friend.id} friend={friend} />
+        return <Friend 
+          key={friend.id} 
+          friend={friend}
+          deleteFriend={props.deleteFriend} />
       })}
     </div>
   )

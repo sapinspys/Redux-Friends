@@ -12,12 +12,16 @@ const app = {
   marginTop: '50px',
 }
 
+const header = {
+  color: 'white',
+}
+
 const flexContainer = {
   paddingTop: '50px',
   display: 'flex',
   justifyContent: 'space-between',
   maxWidth: '580px',
-  margin: '0 auto'
+  margin: '0 auto',
 }
 
 class App extends Component {
@@ -29,10 +33,15 @@ class App extends Component {
   render() {
     return (
       <div style={app}>
-        <h1>My Friends!</h1>
+        <header style={header}>
+          <h1>My Friends!</h1>
+          <p>Add new friends or edit by clicking on a friend card.</p>
+        </header>
         <div style={flexContainer}>
           <AddFriendFrom />
-          <Friends friends={this.props.friends} />
+          <Friends 
+            friends={this.props.friends}
+            deleteFriend={this.deleteFriend} />
         </div>
       </div>
     );
