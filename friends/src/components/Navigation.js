@@ -34,8 +34,8 @@ export default class Navigation extends Component {
         return (
         <NavWrapper>
             <NavContainer>
-                <Link style={navLink} to='/public'>Home</Link>
-                <Link style={navLink} to='/friends-page'>My Friends</Link>
+                <Link style={navLink} to='/login'>Home</Link>
+                <Link style={navLink} to='/friends-page'>My Friends!</Link>
                 <a style={navLink} 
                     href='https://www.linkedin.com/in/guillermo-arria-devoe/' 
                     target='_blank'

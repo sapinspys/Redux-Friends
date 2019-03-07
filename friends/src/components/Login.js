@@ -3,6 +3,29 @@ import React, { Component } from 'react';
 import { login } from '../actions';
 import { connect } from 'react-redux';
 
+import { Button, Form, Label, Input } from 'reactstrap';
+
+// INLINE STYLING
+const loginContainer = {
+  width: '500px',
+  margin: '0 auto',
+  textAlign: 'center',
+  marginTop: '70px',
+}
+
+const loginForm = {
+  width: '300px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  height: '300px',
+  background: 'whitesmoke',
+  padding: '20px',
+  borderRadius: '5px',
+  boxShadow: '0 0 10px white',
+  margin: '0 auto'
+}
+
 class Login extends Component {
   state = {
     credentials: {
@@ -37,23 +60,33 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.login}>
-          <input
-            type="text"
-            name="username"
-            value={this.state.credentials.username}
-            onChange={this.handleChange}
-          />
-          <input
-            type="password"
-            name="password"
-            value={this.state.credentials.password}
-            onChange={this.handleChange}
-          />
-          <button>Log in</button>
-        </form>
-        <h3>{this.props.error}</h3>
+      <div style={loginContainer}>
+        <Form style={loginForm}
+          onSubmit={this.login}>
+          <Label style={{color:'gray', fontSize: '1.4rem'}}>
+            My Friends! Login
+          </Label>
+          <Label>
+            Username:
+            <Input
+              type="text"
+              name="username"
+              value={this.state.credentials.username}
+              onChange={this.handleChange}
+              />
+          </Label>
+          <Label>
+            Password:
+            <Input
+              type="password"
+              name="password"
+              value={this.state.credentials.password}
+              onChange={this.handleChange}
+            />
+          </Label>
+          <Button color='primary'>Log in</Button>
+        </Form>
+        <p style={{color: 'white', marginTop: '10px'}}>{this.props.error}</p>
       </div>
     );
   }

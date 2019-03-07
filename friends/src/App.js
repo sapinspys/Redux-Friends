@@ -27,20 +27,6 @@ class App extends Component {
         <Route path="/public" component={Public} />
         <Route path="/login" component={Login} />
         <PrivateRoute path="/friends-page" component={FriendsPage} />
-        {/* <Route path="/" />
-        <Route path="/login" component={Login} /> */}
-        {/* <Route exact path='/' 
-          render={(props) => 
-            <FriendsPage {...props} 
-              friends={this.state.friends} 
-              handleDelete={(name) => this.deleteFriend(name)}
-              sendFriendData={(name) => this.sendFriendData(name)}  />} />
-        <Route path='/add' 
-          render={(props) => 
-            <FriendForm {...props} 
-              friends={this.state.friends}
-              addFriend={(formState) => this.addFriend(formState)}
-              friendToEdit={this.state.friendToEdit} />} /> */}
       </div>
     );
   }
