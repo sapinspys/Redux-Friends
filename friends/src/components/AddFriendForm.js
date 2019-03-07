@@ -69,9 +69,6 @@ class AddFriendForm extends Component {
               onChange={this.handleChange} 
               name='email' />
           </Label>
-          {/* <Link>
-            <Button color='primary' block>Submit</Button>
-          </Link> */}
           <Button color='primary' block>Submit</Button>
         </Form>
       );

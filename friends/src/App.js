@@ -9,7 +9,7 @@ import { fetchData, deleteFriend } from './actions';
 // INLINE STYLES
 const app = {
   textAlign: 'center',
-  marginTop: '50px',
+  marginTop: '25px',
 }
 
 const header = {
@@ -17,7 +17,7 @@ const header = {
 }
 
 const flexContainer = {
-  paddingTop: '50px',
+  paddingTop: '25px',
   display: 'flex',
   justifyContent: 'space-between',
   maxWidth: '580px',
