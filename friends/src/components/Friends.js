@@ -4,10 +4,9 @@ import Friend from './Friend';
 
 // INLINE STYLING
 const cardContainer = {
-  width: '500px',
+  width: '240px',
   display: 'flex',
   flexWrap: 'wrap',
-  justifyContent: 'space-between'
 }
 
 const Friends = props => {

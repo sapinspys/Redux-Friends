@@ -13,9 +13,11 @@ const app = {
 }
 
 const flexContainer = {
-  marginTop: '50px',
+  paddingTop: '50px',
   display: 'flex',
-  justifyContent: 'space-evenly'
+  justifyContent: 'space-between',
+  maxWidth: '580px',
+  margin: '0 auto'
 }
 
 class App extends Component {
