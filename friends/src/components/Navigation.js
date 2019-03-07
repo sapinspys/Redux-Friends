@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import github from '../imgs/github-white.png';
-import linkedin from '../imgs/linkedin-white.png';
+import github from './imgs/github-white.png';
+import linkedin from './imgs/linkedin-white.png';
 
 // Styled Components
 const NavWrapper = styled.div`
