@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import AddFriendFrom from './AddFriendForm';
-import Friends from './Friends';
+// import AddFriendForm from './AddFriendForm';
+// import Friends from './Friends';
 
 import { connect } from 'react-redux';
 import { fetchData, deleteFriend } from '../actions';
@@ -42,10 +42,10 @@ class FriendsPage extends Component {
           <p>Add new friends or edit by clicking on a friend card.</p>
         </header>
         <div style={flexContainer}>
-          <AddFriendFrom />
-          <Friends 
+          {/* <AddFriendForm /> */}
+          {/* <Friends 
             friends={this.props.friends}
-            deleteFriend={(id) => this.deleteFriend(id)} />
+            deleteFriend={(id) => this.deleteFriend(id)} /> */}
         </div>
       </div>
     );

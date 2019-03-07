@@ -82,5 +82,4 @@ class AddFriendForm extends Component {
     }
   }
   
-  // the characters and the fetching boolean
   export default connect(mapStateToProps, { addFriend })(AddFriendForm);
