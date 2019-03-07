@@ -5,7 +5,7 @@ export const SUCCESS = 'SUCCESS';
 export const FAILURE = 'FAILURE';
 export const ADDING_FRIEND = 'ADDING_FRIEND';
 export const DELETING_FRIEND = 'DELETING_FRIEND';
-export const EDITTING_FRIEND = 'EDITTING_FRIEND';
+export const EDITING_FRIEND = 'EDITING_FRIEND';
 
 
 export const fetchData = () => dispatch => {
@@ -63,7 +63,7 @@ export const deleteFriend = (id) => dispatch => {
 }
 
 export const editFriend = (id, friendData) => dispatch => {
-  dispatch ({ type: EDITTING_FRIEND })
+  dispatch ({ type: EDITING_FRIEND })
   axios
     .put(`http://localhost:5000/api/friends/${id}`, friendData)
     .then(res => {

@@ -60,6 +60,5 @@ const mapStateToProps = (state) => {
   }
 }
 
-// the characters and the fetching boolean
 export default connect(mapStateToProps, { fetchData, deleteFriend })(App);
 

@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+import { editFriend } from '../actions';
+
 import { Card, 
   Button, 
   Dropdown, 
   DropdownMenu, 
-  DropdownItem, 
   DropdownToggle,
   Form,
   Label,
@@ -67,10 +69,11 @@ class Friend extends React.Component {
   handleSubmit(id) {
     return e => {
       e.preventDefault();
+
       const stateCopy = {...this.state};
       delete stateCopy.dropdownOpen;
-      console.log(stateCopy);
-      console.log(id);
+      
+      this.props.editFriend(id, stateCopy)
   
       this.setState(prevState => ({
         dropdownOpen: !prevState.dropdownOpen,
@@ -144,4 +147,11 @@ class Friend extends React.Component {
   }
 }
 
-export default Friend;
+const mapStateToProps = (state) => {
+  return {
+    editingFriend: state.friendReducer.fetchingFriends,
+    error: state.friendReducer.error,
+  }
+}
+
+export default connect(mapStateToProps, { editFriend })(Friend);
