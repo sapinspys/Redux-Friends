@@ -1,12 +1,38 @@
-import { FETCH_FRIENDS, ADDING_FRIEND, DELETING_FRIEND, EDITING_FRIEND, SUCCESS, FAILURE } from "../actions";
+import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE, FETCH_FRIENDS, ADDING_FRIEND, DELETING_FRIEND, EDITING_FRIEND, SUCCESS, FAILURE } from "../actions";
 
 const initialState = {
+  logginIn: false,
   fetchingFriends: false,
   addingFriend: false,
   deletingFriend: false,
   editingFriend: false,
   friends: [],
   error: null,
+}
+
+export const loginReducer = (state = initialState, action) => {
+  switch(action.type) {
+    case LOGIN_START:
+      return {
+        ...state,
+        logginIn: true,
+        error: null,
+      }
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        logginIn: false,
+        error: null,
+      }
+    case LOGIN_FAILURE:
+      return {
+        ...state,
+        logginIn: false,
+        error: action.payload,
+      }
+    default:
+      return state;
+  }
 }
 
 export const friendReducer = (state = initialState, action) => {
