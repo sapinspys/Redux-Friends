@@ -4,6 +4,7 @@ export const FETCH_FRIENDS = 'FETCH_FRIENDS';
 export const SUCCESS = 'SUCCESS';
 export const FAILURE = 'FAILURE';
 export const ADDING_FRIEND = 'ADDING_FRIEND';
+export const DELETING_FRIEND = 'DELETING_FRIEND';
 
 
 export const fetchData = () => dispatch => {
@@ -28,6 +29,24 @@ export const addFriend = (friendData) => dispatch => {
   dispatch ({ type: ADDING_FRIEND })
   axios
     .post('http://localhost:5000/api/friends', friendData)
+    .then(res => {
+      dispatch({
+        type: SUCCESS,
+        payload: res.data,
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: FAILURE,
+        payload: err.response,
+      })
+    })
+}
+
+export const deleteFriend = (id) => dispatch => {
+  dispatch ({ type: DELETING_FRIEND })
+  axios
+    .delete(`http://localhost:5000/api/friends/${id}`)
     .then(res => {
       dispatch({
         type: SUCCESS,
