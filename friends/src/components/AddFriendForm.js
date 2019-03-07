@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import { addFriend } from '../actions';
+
 import { Button, Form, Label, Input } from 'reactstrap';
 
 // Inline Styles
@@ -17,7 +20,7 @@ const formStyles = {
   marginTop: '50px'
 }
 
-export default class FriendForm extends Component {
+class AddFriendForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,8 +36,7 @@ export default class FriendForm extends Component {
 
     handleSubmit = (e) => {
       e.preventDefault();
-      console.log(this.state)
-      // this.props.addFriend(this.state);
+      this.props.addFriend(this.state);
 
       this.setState({
         name: '',
@@ -76,3 +78,13 @@ export default class FriendForm extends Component {
       );
     }
   }
+
+  const mapStateToProps = (state) => {
+    return {
+      addingFriend: state.friendReducer.addingFriend,
+      error: state.friendReducer.error,
+    }
+  }
+  
+  // the characters and the fetching boolean
+  export default connect(mapStateToProps, { addFriend })(AddFriendForm);

@@ -24,6 +24,7 @@ export const friendReducer = (state = initialState, action) => {
     case SUCCESS:
       return {
         ...state,
+        addingFriend: false,
         fetchingFriends: false,
         friends: action.payload,
         error: null,
@@ -33,7 +34,8 @@ export const friendReducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
         friends: [],
-        fetching: false,
+        fetchingFriends: false,
+        addingFriend: false,
       }
     default:
       return state;
