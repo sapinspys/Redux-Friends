@@ -27,7 +27,7 @@ export const fetchData = () => dispatch => {
 export const addFriend = (friendData) => dispatch => {
   dispatch ({ type: ADDING_FRIEND })
   axios
-    .get('http://localhost:5000/api/friends', friendData)
+    .post('http://localhost:5000/api/friends', friendData)
     .then(res => {
       dispatch({
         type: SUCCESS,
