@@ -1,7 +1,6 @@
 import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE, FETCH_FRIENDS, ADDING_FRIEND, DELETING_FRIEND, EDITING_FRIEND, SUCCESS, FAILURE } from "../actions";
 
 const initialState = {
-  logginIn: false,
   fetchingFriends: false,
   addingFriend: false,
   deletingFriend: false,
@@ -10,24 +9,24 @@ const initialState = {
   error: null,
 }
 
-export const loginReducer = (state = initialState, action) => {
+export const loginReducer = (state = [], action) => {
   switch(action.type) {
     case LOGIN_START:
       return {
         ...state,
-        logginIn: true,
+        loggingIn: true,
         error: null,
       }
     case LOGIN_SUCCESS:
       return {
         ...state,
-        logginIn: false,
+        loggingIn: false,
         error: null,
       }
     case LOGIN_FAILURE:
       return {
         ...state,
-        logginIn: false,
+        loggingIn: false,
         error: action.payload,
       }
     default:

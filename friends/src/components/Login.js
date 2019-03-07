@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import { login } from '../actions';
 import { connect } from 'react-redux';
 
 class Login extends Component {
@@ -12,12 +13,18 @@ class Login extends Component {
 
   login = e => {
     e.preventDefault();
-    props.login(this.state.credentials)
+    this.props.login(this.state.credentials)
       .then(() => {
         const route = this.props.location.state.from || '/';
         // only fires if login call is successful
         this.props.history.push(route);
       })
+
+    this.setState({    
+      credentials: {
+        username: '',
+        password: ''
+    }})
   }
 
   handleChange = e => {
@@ -52,5 +59,12 @@ class Login extends Component {
   }
 }
 
-export default connect(null, { login })(Login);
+const mapStateToProps = (state) => {
+  return {
+    loggingIn: state.loginReducer.loggingIn,
+    error: state.loginReducer.error,
+  }
+}
+
+export default connect(mapStateToProps, { login })(Login);
 
