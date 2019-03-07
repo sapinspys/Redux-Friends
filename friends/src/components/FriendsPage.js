@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import AddFriendForm from './AddFriendForm';
-// import Friends from './Friends';
+import Friends from './Friends';
 
 import { connect } from 'react-redux';
 import { fetchData, deleteFriend } from '../actions';
@@ -43,9 +43,9 @@ class FriendsPage extends Component {
         </header>
         <div style={flexContainer}>
           <AddFriendForm />
-          {/* <Friends 
+          <Friends 
             friends={this.props.friends}
-            deleteFriend={(id) => this.deleteFriend(id)} /> */}
+            deleteFriend={(id) => this.deleteFriend(id)} />
         </div>
       </div>
     );
