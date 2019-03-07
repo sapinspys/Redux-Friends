@@ -8,11 +8,14 @@ import { fetchData } from './actions';
 
 // INLINE STYLES
 const app = {
-  alignText: 'center',
+  textAlign: 'center',
+  marginTop: '50px',
 }
 
 const flexContainer = {
+  marginTop: '50px',
   display: 'flex',
+  justifyContent: 'space-evenly'
 }
 
 class App extends Component {

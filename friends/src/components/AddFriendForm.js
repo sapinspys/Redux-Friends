@@ -7,17 +7,15 @@ import { Button, Form, Label, Input } from 'reactstrap';
 
 // Inline Styles
 const formStyles = {
-  width: '400px',
+  width: '300px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  margin: '0 auto',
-  height: '400px',
+  height: '350px',
   background: 'whitesmoke',
   padding: '20px',
   borderRadius: '5px',
-  boxShadow: '0 0 2px black',
-  marginTop: '50px'
+  boxShadow: '0 0 5px black',
 }
 
 class AddFriendForm extends Component {
