@@ -32,7 +32,7 @@ const formStyles = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  height: '350px',
+  height: '300px',
   background: 'whitesmoke',
   padding: '20px',
   borderRadius: '5px',
@@ -62,7 +62,7 @@ class Friend extends React.Component {
 
   handleChange = e => {
     this.setState({[e.target.name]: e.target.value});
-  }
+  };
 
   handleSubmit(id) {
     return e => {
@@ -107,10 +107,7 @@ class Friend extends React.Component {
             </DropdownToggle>
             <DropdownMenu>
               <Form onSubmit={this.handleSubmit(this.props.friend.id)} 
-                style={formStyles}>
-                <Label style={{color:'gray', fontSize: '1.4rem'}}>
-                  Edit Friend
-                </Label>
+                style={formStyles} >
                 <Label>
                   Name:
                   <Input type="text" 
