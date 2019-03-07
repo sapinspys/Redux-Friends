@@ -6,7 +6,14 @@ import Friends from './components/Friends';
 import { connect } from 'react-redux';
 import { fetchData } from './actions';
 
-import './App.css';
+// INLINE STYLES
+const app = {
+  alignText: 'center',
+}
+
+const flexContainer = {
+  display: 'flex',
+}
 
 class App extends Component {
 
@@ -16,9 +23,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div style={app}>
         <h1>My Friends!</h1>
-        <div className='flexContainer'>
+        <div style={flexContainer}>
           <AddFriendFrom />
           <Friends friends={this.props.friends} />
         </div>
