@@ -6,7 +6,7 @@ const app = express();
 const token =
   'eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ';
 
-let nextId = 6;
+let nextId = 7;
 
 let friends = [
   {
@@ -56,13 +56,14 @@ function authenticator(req, res, next) {
   if (authorization === token) {
     next();
   } else {
-    res.status(403).json({ error: 'User be logged in to do that.' });
+    res.status(403).json({ error: 'User must be logged in to do that.' });
+    // next();
   }
 }
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
-  if (username === 'Lambda School' && password === 'i<3Lambd4') {
+  if (username === 'admin' && password === 'admin') {
     req.loggedIn = true;
     res.status(200).json({
       payload: token
@@ -70,7 +71,11 @@ app.post('/api/login', (req, res) => {
   } else {
     res
       .status(403)
-      .json({ error: 'Username or Password incorrect. Please see Readme' });
+      .json({ error: 'Username or Password incorrect.' });
+    // req.loggedIn = true;
+    // res.status(200).json({
+    //   payload: token
+    // });
   }
 });
 
